@@ -1,10 +1,12 @@
 package com.ethancrespopueyo.norigintestethan.presenter
 
-import com.ethancrespopueyo.norigintestethan.data.db.model.epg.Channels
+import java.io.InputStream
 
 interface MainMvpPresenter {
 
-    fun synchronizeJsonWithRoom()
+    fun inputStreamToString(inputStream: InputStream): String?
+
+    fun synchronizeJsonWithRoom(openRawResource: InputStream)
 
     fun getRecyclerViewItems()
 

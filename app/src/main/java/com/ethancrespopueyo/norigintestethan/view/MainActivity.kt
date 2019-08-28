@@ -5,7 +5,6 @@ import android.os.Bundle
 import com.ethancrespopueyo.norigintestethan.R
 import com.ethancrespopueyo.norigintestethan.data.db.model.epg.Channels
 import com.ethancrespopueyo.norigintestethan.data.interactor.MainInteractor
-import com.ethancrespopueyo.norigintestethan.data.interactor.MainMvpInteractor
 import com.ethancrespopueyo.norigintestethan.presenter.MainPresenter
 
 class MainActivity : AppCompatActivity(), MainMvpView {
@@ -18,7 +17,7 @@ class MainActivity : AppCompatActivity(), MainMvpView {
         setContentView(R.layout.activity_main)
 
         mainPresenter = MainPresenter(this, MainInteractor())
-        mainPresenter.synchronizeJsonWithRoom()
+        mainPresenter.synchronizeJsonWithRoom(getResources().openRawResource(R.raw.epg))
 
     }
 
