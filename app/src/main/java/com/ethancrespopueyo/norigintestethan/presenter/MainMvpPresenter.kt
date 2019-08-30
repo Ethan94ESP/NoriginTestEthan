@@ -6,4 +6,6 @@ interface MainMvpPresenter {
 
     fun synchronizeJsonWithRoom(openRawResource: InputStream)
 
+
+
 }

@@ -10,6 +10,7 @@ import java.io.IOException
 import java.io.InputStream
 import com.ethancrespopueyo.norigintestethan.data.db.model.epg.Channels
 import com.ethancrespopueyo.norigintestethan.data.interactor.ChannelViewModel
+import com.ethancrespopueyo.norigintestethan.utils.getCurrentDate
 import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
 import java.text.SimpleDateFormat
@@ -26,24 +27,16 @@ class MainPresenter(val mainView: MainMvpView?, model: ChannelViewModel) : MainM
         doAsync {
             if (arrayList != null) {
                 for (item in 0..arrayList.channels!!.size - 1) {
-                    for (index in 0..arrayList.channels!!.get(item).schedules!!.size-1) {
+                    for (index in 0..arrayList.channels!!.get(item).schedules!!.size - 1) {
                         var start = arrayList.channels!!.get(item).schedules!!.get(index).start
                         var end = arrayList.channels!!.get(item).schedules!!.get(index).end
                         val startDate = start!!.split("T")[0]
                         val endDate = end!!.split("T")[0]
-                        Log.d("START::",startDate)
-                        val current = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                            val current = LocalDateTime.now()
-                            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-                            val currentDate = current.format(formatter)
-                            arrayList.channels!!.get(item).schedules!!.get(index).start = start.replace(startDate, currentDate)
-                            arrayList.channels!!.get(item).schedules!!.get(index).end = end.replace(endDate, currentDate)
-                        } else {
-                            val sdf = SimpleDateFormat("yyyy-MM-dd")
-                            val currentDate = sdf.format(Date())
-                            arrayList.channels!!.get(item).schedules!!.get(index).start = start.replace(startDate, currentDate)
-                            arrayList.channels!!.get(item).schedules!!.get(index).end = end.replace(endDate, currentDate)
-                        }
+
+                        val currentDate = getCurrentDate()
+                        arrayList.channels!!.get(item).schedules!!.get(index).start = start.replace(startDate, currentDate)
+                        arrayList.channels!!.get(item).schedules!!.get(index).end = end.replace(endDate, currentDate)
+
                     }
                     channelModel.insert(
                         ChannelRoom(
@@ -57,4 +50,5 @@ class MainPresenter(val mainView: MainMvpView?, model: ChannelViewModel) : MainM
             }
         }
     }
+
 }
