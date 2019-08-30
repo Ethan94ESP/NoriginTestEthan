@@ -1,11 +1,15 @@
 package com.ethancrespopueyo.norigintestethan.data.interactor
 
-import com.ethancrespopueyo.norigintestethan.data.db.model.epg.Channel
+import com.ethancrespopueyo.norigintestethan.data.db.model.epg.ChannelRoom
+import com.ethancrespopueyo.norigintestethan.data.db.model.epg.Channels
+import java.io.InputStream
 
 interface MainMvpInteractor {
 
-    fun saveMainData(channels: List<Channel>?)
+    fun insert(channel: ChannelRoom)
 
-    fun getMainData()
+    fun arrayFromJson(openRawResource: InputStream): Channels?
+
+    fun inputStreamToString(inputStream: InputStream): String?
 
 }

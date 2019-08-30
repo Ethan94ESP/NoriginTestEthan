@@ -4,9 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.ethancrespopueyo.norigintestethan.data.db.model.epg.Channel
+import androidx.room.TypeConverters
+import com.ethancrespopueyo.norigintestethan.data.db.model.epg.ChannelRoom
 
-@Database(entities = arrayOf(Channel::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(ChannelRoom::class), version = 1, exportSchema = false)
+@TypeConverters(DataConverter::class)
 abstract class RoomSingleton : RoomDatabase() {
 
     abstract fun channelDao(): ChannelsDao
