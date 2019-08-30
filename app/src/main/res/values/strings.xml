@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NoriginTestEthan</string>
+    <string name="searchHint">Write to search...</string>
 </resources>

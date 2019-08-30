@@ -8,6 +8,34 @@
         android:background="@android:color/black"
         tools:context=".view.MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize" android:id="@+id/toolbar">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+
+            <ImageView android:layout_width="30dp"
+                       android:layout_height="30dp"
+                       android:src="@drawable/avatar"
+                       android:layout_centerVertical="true"
+            />
+
+            <ImageView android:layout_width="60dp"
+                       android:layout_height="60dp"
+                       android:src="@drawable/logo"
+                       android:layout_centerVertical="true"
+                       android:layout_centerHorizontal="true"
+                       android:translationX="30dp"
+            />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -128,5 +156,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/recycler_view"
-            android:layout_above="@+id/bottomBar"/>
+            android:layout_above="@+id/bottomBar"
+            android:layout_below="@+id/toolbar"/>
 </RelativeLayout>

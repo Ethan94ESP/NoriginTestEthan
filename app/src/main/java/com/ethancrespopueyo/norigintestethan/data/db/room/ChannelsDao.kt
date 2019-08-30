@@ -23,4 +23,5 @@ interface ChannelsDao{
 
     @Query("DELETE FROM channelTbl")
     fun flushChannelData()
-}
+
+    }

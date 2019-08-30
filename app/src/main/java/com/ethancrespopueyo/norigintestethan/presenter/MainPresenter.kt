@@ -57,6 +57,4 @@ class MainPresenter(val mainView: MainMvpView?, model: ChannelViewModel) : MainM
             }
         }
     }
-
-
 }
