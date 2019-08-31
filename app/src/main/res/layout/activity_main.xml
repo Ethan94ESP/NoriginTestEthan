@@ -22,12 +22,14 @@
             <ImageView android:layout_width="30dp"
                        android:layout_height="30dp"
                        android:src="@drawable/avatar"
+                       android:contentDescription="@string/avatarlogo"
                        android:layout_centerVertical="true"
             />
 
             <ImageView android:layout_width="60dp"
                        android:layout_height="60dp"
                        android:src="@drawable/logo"
+                       android:contentDescription="@string/logoapp"
                        android:layout_centerVertical="true"
                        android:layout_centerHorizontal="true"
                        android:translationX="30dp"
@@ -42,114 +44,123 @@
             android:id="@+id/bottomBar"
             android:layout_alignParentBottom="true"
             android:background="@color/colorPrimary"
+            android:baselineAligned="false"
             android:weightSum="1"
             android:padding="5dp"
-            android:layout_height="75dp">
+            android:layout_height="60dp">
 
         <RelativeLayout
                 android:orientation="vertical"
                 android:layout_width="0dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="0.20"
                 android:layout_height="match_parent">
+
             <ImageView
                     android:layout_width="25dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_height="wrap_content"
+                    android:layout_height="25dp"
                     app:srcCompat="@drawable/home"
-                    android:id="@+id/ivHome"/>
+                    android:id="@+id/ivHome"
+                    android:contentDescription="@string/logohome"/>
+
             <TextView
-                    android:text="Home"
+                    android:text="@string/home"
                     android:layout_width="wrap_content"
                     android:textColor="@android:color/white"
-                    android:translationY="-10dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView"
                     android:layout_centerHorizontal="true"
                     android:layout_below="@+id/ivHome"/>
+
         </RelativeLayout>
         <RelativeLayout
                 android:orientation="vertical"
                 android:layout_width="0dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="0.20"
                 android:layout_height="match_parent">
             <ImageView
                     android:layout_width="25dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/home"
-                    android:id="@+id/ivHome1"/>
+                    android:layout_height="25dp"
+                    app:srcCompat="@drawable/live_icon"
+                    android:id="@+id/ivLive"
+                    android:contentDescription="@string/iconolive"/>
             <TextView
-                    android:text="Home"
-                    android:translationY="-10dp"
+                    android:text="@string/live"
                     android:layout_width="wrap_content"
                     android:textColor="@android:color/white"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView1"
                     android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/ivHome1"/>
+                    android:layout_below="@+id/ivLive"/>
         </RelativeLayout>
         <RelativeLayout
                 android:orientation="vertical"
                 android:layout_width="0dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="0.20"
                 android:layout_height="match_parent">
             <ImageView
                     android:layout_width="25dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/home"
-                    android:id="@+id/ivHome2"/>
+                    android:layout_height="25dp"
+                    app:srcCompat="@drawable/list_icon"
+                    android:id="@+id/ivGuide"
+                    android:contentDescription="@string/iconguide"/>
             <TextView
-                    android:text="Home"
-                    android:translationY="-10dp"
+                    android:text="@string/tv_guide"
                     android:layout_width="wrap_content"
                     android:textColor="@android:color/white"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView2"
                     android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/ivHome2"/>
+                    android:layout_below="@+id/ivGuide"/>
         </RelativeLayout>
         <RelativeLayout
                 android:orientation="vertical"
                 android:layout_width="0dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="0.20"
                 android:layout_height="match_parent">
             <ImageView
                     android:layout_width="25dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/home"
-                    android:id="@+id/ivHome4"/>
+                    android:layout_height="25dp"
+                    app:srcCompat="@drawable/catch_icon"
+                    android:id="@+id/ivCatchup"
+                    android:contentDescription="@string/iconcatchup"/>
             <TextView
-                    android:text="Home"
-                    android:translationY="-10dp"
+                    android:text="@string/catchup"
                     android:layout_width="wrap_content"
                     android:textColor="@android:color/white"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView4"
                     android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/ivHome4"/>
+                    android:layout_below="@+id/ivCatchup"/>
         </RelativeLayout>
         <RelativeLayout
                 android:orientation="vertical"
                 android:layout_width="0dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="0.20"
                 android:layout_height="match_parent">
             <ImageView
                     android:layout_width="25dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/home"
-                    android:id="@+id/ivHome3"/>
+                    android:layout_height="25dp"
+                    app:srcCompat="@drawable/library_icon"
+                    android:id="@+id/ivLibrary"
+                    android:contentDescription="@string/iconlibrary"/>
             <TextView
-                    android:text="Home"
-                    android:translationY="-10dp"
+                    android:text="@string/library"
                     android:layout_width="wrap_content"
                     android:textColor="@android:color/white"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView3"
                     android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/ivHome3"/>
+                    android:layout_below="@+id/ivLibrary"/>
         </RelativeLayout>
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView

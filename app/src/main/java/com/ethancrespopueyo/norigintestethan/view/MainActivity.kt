@@ -67,6 +67,9 @@ class MainActivity : AppCompatActivity(), MainMvpView {
         return super.onCreateOptionsMenu(menu)
     }
 
+    override fun notifyDataSetChanged(){
+        adapter.notifyDataSetChanged()
+    }
 
     override fun initializeRecyclerVM() {
 
@@ -81,10 +84,11 @@ class MainActivity : AppCompatActivity(), MainMvpView {
         // Observe the model
         model.allChannels.observe(this, Observer { channels ->
             // Data bind the recycler view
-            this.adapter = RecyclerViewAdapter(channels) {
-                //mainPresenter.onItemClick(it)
-            }
-            recycler_view.adapter = this.adapter
+            adapter = RecyclerViewAdapter(channels) {}
+            adapter.setPresenter(mainPresenter)
+            recycler_view.adapter = adapter
         })
+
+
     }
 }

@@ -2,7 +2,6 @@ package com.ethancrespopueyo.norigintestethan.data.db.model.epg
 
 
 import androidx.room.*
-import com.ethancrespopueyo.norigintestethan.data.db.room.DataConverter
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -34,18 +33,13 @@ class Channel(
 
 @Entity(tableName = "channelTbl")
 data class ChannelRoom(
-    @PrimaryKey
     @ColumnInfo(name = "id")
     var id: String,
 
+    @PrimaryKey
     @ColumnInfo(name = "title")
     var title: String,
 
     @ColumnInfo(name = "logo")
-    var logo: String,
-
-    @ColumnInfo(name = "schedules")
-    var schedules: List<Schedule>
-
-
+    var logo: String
 )

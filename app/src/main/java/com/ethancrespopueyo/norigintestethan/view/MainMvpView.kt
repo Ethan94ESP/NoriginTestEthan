@@ -5,4 +5,6 @@ import com.ethancrespopueyo.norigintestethan.data.db.model.epg.Channels
 interface MainMvpView {
 
     fun initializeRecyclerVM()
+
+    fun notifyDataSetChanged()
 }

@@ -7,7 +7,13 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "schduleTbl")
+@Entity(tableName = "schedule",
+    foreignKeys = arrayOf(
+        ForeignKey(entity = ChannelRoom::class,
+            parentColumns = arrayOf("title"),
+            childColumns = arrayOf("owner"))))
+data class ScheduleRoom (@PrimaryKey(autoGenerate = true) val id: Int,  val owner: String, val title: String, var star: Boolean, var start:String, var endtime:String)
+
 class Schedule {
 
     @SerializedName("title")
@@ -24,5 +30,7 @@ class Schedule {
     @SerializedName("end")
     @Expose
     var end: String? = null
+
+    var star: Boolean? = false
 
 }

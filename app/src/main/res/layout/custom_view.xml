@@ -25,8 +25,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.17"
-                    android:layout_marginRight="10dp"
-                    tools:srcCompat="@tools:sample/avatars"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/logo"
                     android:id="@+id/imageView"
             />
             <LinearLayout
@@ -34,7 +34,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.75"
-                    android:layout_marginLeft="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
             >
@@ -43,7 +42,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@android:color/white"
-                        android:text="11:00 - 13:00"
                         android:textSize="12sp"
                 />
                 <TextView
@@ -52,7 +50,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:textColor="@android:color/white"
-                        android:text="The Suits"
                         android:textSize="16sp"
                         android:textStyle="bold"
                 />
@@ -61,17 +58,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:max="100"
+                        android:progressTint="@android:color/holo_orange_light"
                         android:layout_marginTop="5dp"
                         android:id="@+id/progressBar"/>
             </LinearLayout>
             <ImageView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+                    android:contentDescription="@string/star"
                     android:layout_weight="0.08"
                     android:tint="@color/colorPrimary"
                     app:srcCompat="@android:drawable/btn_star"
-                    android:id="@+id/imageView2"/>
+                    android:id="@+id/ivStar"/>
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">NoriginTestEthan</string>
     <string name="searchHint">Write to search...</string>
+    <string name="star">star</string>
+    <string name="logo">logo</string>
+    <string name="avatarlogo">avatarLogo</string>
+    <string name="logoapp">logoApp</string>
+    <string name="logohome">LogoHome</string>
+    <string name="home">Home</string>
+    <string name="iconolive">IconoLive</string>
+    <string name="live">Live</string>
+    <string name="iconguide">IconGuide</string>
+    <string name="tv_guide">TV Guide</string>
+    <string name="iconcatchup">IconCatchup</string>
+    <string name="catchup">Catchup</string>
+    <string name="iconlibrary">IconLibrary</string>
+    <string name="library">Library</string>
 </resources>
