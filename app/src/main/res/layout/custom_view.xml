@@ -48,7 +48,6 @@
                         android:id="@+id/txtName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
                         android:textColor="@android:color/white"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -59,7 +58,6 @@
                         android:layout_height="wrap_content"
                         android:max="100"
                         android:progressTint="@android:color/holo_orange_light"
-                        android:layout_marginTop="5dp"
                         android:id="@+id/progressBar"/>
             </LinearLayout>
             <ImageView
