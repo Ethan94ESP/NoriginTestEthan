@@ -119,10 +119,13 @@
                     android:layout_below="@+id/ivGuide"/>
         </RelativeLayout>
         <RelativeLayout
+                android:id="@+id/rlCatchup"
                 android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight="0.20"
+                android:clickable="true"
+                android:onClick="onClickCathcup"
                 android:layout_height="match_parent">
             <ImageView
                     android:layout_width="25dp"

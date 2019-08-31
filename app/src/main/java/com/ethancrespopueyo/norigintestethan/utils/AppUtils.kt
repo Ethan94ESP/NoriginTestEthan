@@ -2,7 +2,6 @@ package com.ethancrespopueyo.norigintestethan.utils
 
 import android.content.Context
 import android.os.Build
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,6 @@ import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
-
 
 
 //less code for inflateViews
@@ -30,3 +28,4 @@ fun getCurrentDate(): String {
         return currentDate;
     }
 }
+

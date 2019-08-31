@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ethancrespopueyo.norigintestethan.R
 import com.ethancrespopueyo.norigintestethan.data.interactor.ChannelViewModel
 import com.ethancrespopueyo.norigintestethan.presenter.MainPresenter
-import com.ethancrespopueyo.norigintestethan.view.adapters.RecyclerViewAdapter
-import com.ethancrespopueyo.norigintestethan.view.adapters.SearchAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainMvpView {
@@ -21,7 +19,6 @@ class MainActivity : AppCompatActivity(), MainMvpView {
     private lateinit var model: ChannelViewModel
     private lateinit var adapter: RecyclerViewAdapter
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,18 +26,16 @@ class MainActivity : AppCompatActivity(), MainMvpView {
         mainPresenter = MainPresenter(this, model)
         mainPresenter.synchronizeJsonWithRoom(getResources().openRawResource(R.raw.epg))
         setSupportActionBar(toolbar)
-
+        rlCatchup.setOnClickListener(mainPresenter)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu to use in the action bar
         menuInflater.inflate(R.menu.search_view, menu)
-
         val searchItem = menu.findItem(R.id.app_bar_search)
 
         if (searchItem!=null) {
             val searchView = searchItem.actionView as SearchView
-
             val searchHint = getString(R.string.searchHint)
             searchView.setQueryHint(searchHint)
 
@@ -50,20 +45,15 @@ class MainActivity : AppCompatActivity(), MainMvpView {
                 }
 
                 override fun onQueryTextChange(newText: String?): Boolean {
-                    if (newText!!.toString().isNotEmpty()) {
+                    if (newText!!.toString().isNotEmpty())
                         adapter.filter.filter(newText)
-                        /*
-                        startRecyclerView(generateData(newText))
-                        companyList.clear()*/
-                    }
-                    else {
+                    else
                         adapter.resetList()
-                    }
+
                     return false
                 }
             })
         }
-
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -72,7 +62,6 @@ class MainActivity : AppCompatActivity(), MainMvpView {
     }
 
     override fun initializeRecyclerVM() {
-
         // Get the view model
         model = ViewModelProviders.of(this).get(ChannelViewModel::class.java)
         // Specify layout for recycler view
@@ -88,7 +77,5 @@ class MainActivity : AppCompatActivity(), MainMvpView {
             adapter.setPresenter(mainPresenter)
             recycler_view.adapter = adapter
         })
-
-
     }
 }

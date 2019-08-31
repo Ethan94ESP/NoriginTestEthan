@@ -1,16 +1,20 @@
 package com.ethancrespopueyo.norigintestethan.presenter
 
+import android.view.View
+import com.ethancrespopueyo.norigintestethan.R
 import com.ethancrespopueyo.norigintestethan.data.db.model.epg.ChannelRoom
 import com.ethancrespopueyo.norigintestethan.data.db.model.epg.ScheduleRoom
 import com.ethancrespopueyo.norigintestethan.view.MainMvpView
 import java.io.InputStream
 import com.ethancrespopueyo.norigintestethan.data.interactor.ChannelViewModel
 import com.ethancrespopueyo.norigintestethan.utils.getCurrentDate
+import kotlinx.android.synthetic.main.activity_main.view.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
 
-class MainPresenter(val mainView: MainMvpView?, model: ChannelViewModel) : MainMvpPresenter {
+class MainPresenter(val mainView: MainMvpView?, model: ChannelViewModel) : MainMvpPresenter, View.OnClickListener {
+
     val channelModel = model
 
     override fun synchronizeJsonWithRoom(openRawResource: InputStream) {
@@ -73,16 +77,22 @@ class MainPresenter(val mainView: MainMvpView?, model: ChannelViewModel) : MainM
         }
     }
 
-    override fun getSchedule(title: String) : List<ScheduleRoom>{
+    override fun getSchedule(title: String): List<ScheduleRoom> {
         return channelModel.selectChannelSchedules(title)
     }
 
-    override fun updateStar(index: Int, boolean: Boolean){
+    override fun updateStar(index: Int, boolean: Boolean) {
         doAsync {
             channelModel.updateStar(index, boolean)
             uiThread {
                 mainView!!.notifyDataSetChanged()
             }
+        }
+    }
+
+    override fun onClick(view: View?) {
+        when (view!!.id) {
+            R.id.rlCatchup -> mainView!!.notifyDataSetChanged()
         }
     }
 }
